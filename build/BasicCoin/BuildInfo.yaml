@@ -1,0 +1,20 @@
+---
+compiled_package_info:
+  package_name: BasicCoin
+  address_alias_instantiation: {}
+  source_digest: B48CD830EEFC4043FEE20B5C2E5EFC604102255855BBDE616D78843812C74D3F
+  build_flags:
+    dev_mode: true
+    test_mode: true
+    generate_docs: false
+    generate_abis: false
+    install_dir: ~
+    force_recompilation: false
+    lock_file: ~
+    additional_named_addresses: {}
+    fetch_deps_only: false
+    skip_fetch_latest_git_deps: false
+    default_flavor: ~
+    default_edition: ~
+    deps_as_root: false
+dependencies: []

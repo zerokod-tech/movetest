@@ -1,3 +1,4 @@
+//WORKINPROGESS
 module mliolios::Tombolon {
     // Part 1: imports
     use sui::object::{Self, ID, UID};
@@ -40,7 +41,10 @@ module mliolios::Tombolon {
         gambler: address,
         slot_1: u8,
         slot_2: u8,
-        slot_3: u8
+        slot_3: u8,
+        slot_4: u8,
+        slot_5: u8,
+        slot_6: u8
     }
 
     // initialize our Suizino
@@ -95,33 +99,203 @@ module mliolios::Tombolon {
         let slot_1 = *vector::borrow(&randomNums, 0);
         let slot_2 = *vector::borrow(&randomNums, 1);
         let slot_3 = *vector::borrow(&randomNums, 2);
+        let slot_4 = *vector::borrow(&randomNums, 3);
+        let slot_5 = *vector::borrow(&randomNums, 4);
+        let slot_6 = *vector::borrow(&randomNums, 5);
+
+        let _ambo1 = false;
+        let _ambo2 = false;
+        let _ambo3 = false;
+        let _ambo4 = false;
+        let _ambo5 = false;
+        let _ambo6 = false;
+
+        let _doubleBIS = false;
+        let _tris = false;
 
 
-        if(slot_1 == slot_2 || slot_2 == slot_3 || slot_1 == slot_3){
+        //TODO maybe I'll semplify the code with !assert - later or something else
+            //ugual couple with slot1
+        if(slot_1 == slot_2 || slot_1 == slot_3 || slot_1 == slot_4 || slot_1 == slot_5 || slot_1 == slot_6){ 
+            let _ambo1 = true;
+            
+            //ugual couple with slot2
+        }else if(slot_2 == slot_1 || slot_2 == slot_3 || slot_2 == slot_4 || slot_2 == slot_5 || slot_2 == slot_6){
+            let _ambo2 = true;
+            //ugual couple with slot3
+        }else if(slot_3 == slot_1 || slot_3 == slot_2 || slot_3 == slot_4 || slot_3 == slot_5 || slot_3 == slot_6){
+            let _ambo3 = true;
+            //ugual couple with slot4
+        }else if(slot_4 == slot_1 || slot_4 == slot_3 || slot_4 == slot_2 || slot_4 == slot_5 || slot_4 == slot_6){
+            let _ambo3 = true;
+            //ugual couple with slot5
+        }else if(slot_5 == slot_1 || slot_5 == slot_2 || slot_5 == slot_4 || slot_5 == slot_3 || slot_5 == slot_6){
+            let _ambo4 = true;
+            //ugual couple with slot6
+        }else if(slot_6 == slot_1 || slot_6 == slot_2 || slot_6 == slot_4 || slot_6 == slot_3 || slot_6 == slot_5){
+            let _ambo5 = true;
+            //closing IF TODO-  ahead
+        };
+        // //////////////////////
+        
+        //tris - tree ugual numbers --UNCOMPLETE --other coses TODO
+        // /////////////////////
+        //
+            // slot 1=slot2=slot3
+            // 
+            // 
+            /*
+        }else if(
+            (slot_1 == slot_2  && slot_2 == slot_3  )
+        
+            || 
+            /// slot1=slot3=slot4
+            8slot_1 == slot_3  && slot_3== slot_4 )
+            ||
+            /// slot1=slot4=slot2
+            (slot_1 == slot_4)  &&  (slot_4 == slot_2 )
+
+            ||
+            /// slot1=slot4=slot5
+            (slot_1 == slot_4  AND slot_4 == slot_5 ) 
+            ||
+            /// slot1=slot4=slot6
+            (slot_1 == slot_4  AND slot_4 == slot_6 ) 
+            /// ////////////////////
+            ||
+            /// /// slot2=slot3=slot4
+            (slot_1 == slot_4  AND slot_4 == slot_6 ) 
+            ||
+            /// /// slot2=slot3=slot5
+            (slot_2 == slot_3  AND slot_3 == slot_5 )
+            ||
+            /// /// slot2=slot3=slot6
+            (slot_2 == slot_3  AND slot_3 == slot_6 )
+            )
+        }
+        _tris=true;
+        }
+        */
+        
+        /*
             winnings = casino.cost_per_game * (MaxWinningsMultiplier+1); // calculate winnings + the money the user spent.
             let payment = balance::split(&mut casino.casino_balance, winnings); // get from casino's balance.
             balance::join(coin::balance_mut(wallet), payment); // add to user's wallet!
             // add winnings to user's wallet
+            
         };
+        */
+/*
+        if( _ambo1 == true || _ambo2 == true || _ambo3 == true || _ambo4 == true || _ambo5 == true|| _ambo6 == true){
+                //win(casino,wallet , ctx );
 
-        // emit event
+            winnings = casino.cost_per_game * (MaxWinningsMultiplier+1); // calculate winnings + the money the user spent.
+            let payment = balance::split(&mut casino.casino_balance, winnings); // get from casino's balance.
+            balance::join(coin::balance_mut(wallet), payment); // add to user's wallet!
+            // add winnings to user's wallet
+
+        }
+*/
+//case at least 2 couples of numbers are ugual numbers are ugual
+//ERROR TODO couple and couple cases
+
+/*
+if( _ambo1 == true || _ambo2 == true || _ambo3 == true || _ambo4 == true || _ambo5 == true|| _ambo6 == true) {
+              
+              let _doubleBIS =true;  
+                //win(casino,wallet , ctx );
+
+            winnings = casino.cost_per_game * (MaxWinningsMultiplier+1); // calculate winnings + the money the user spent.
+            let payment = balance::split(&mut casino.casino_balance, winnings); // get from casino's balance.
+            balance::join(coin::balance_mut(wallet), payment); // add to user's wallet!
+            // add winnings to user's wallet
+
+//case at least 1 couple of numbers are ugual
+     }else 
+     */
+     if ( _ambo1 == true || _ambo2 == true || _ambo3 == true || _ambo4 == true || _ambo5 == true|| _ambo6 == true){
+            winnings = casino.cost_per_game * (MaxWinningsMultiplier+1); // calculate winnings + the money the user spent.
+            let payment = balance::split(&mut casino.casino_balance, winnings); // get from casino's balance.
+            balance::join(coin::balance_mut(wallet), payment); // add to user's wallet!
+            // add winnings to user's wallet
+    
+    };
+
+
+
+
+         // emit event
         event::emit( GambleEvent{
             id: object::uid_to_inner(&uid),
             gambler: tx_context::sender(ctx),
             winnings,
             slot_1,
             slot_2,
-            slot_3
+            slot_3,
+            slot_4,
+            slot_5,
+            slot_6,
         });
 
         // delete unused id
         object::delete(uid);
 
+     
+}
+
+/*
+            winnings = casino.cost_per_game * (MaxWinningsMultiplier+1); // calculate winnings + the money the user spent.
+            let payment = balance::split(&mut casino.casino_balance, winnings); // get from casino's balance.
+            balance::join(coin::balance_mut(wallet), payment); // add to user's wallet!
+            // add winnings to user's wallet
+
+             // emit event
+             event::emit( GambleEvent{
+                id: object::uid_to_inner(&uid),
+                gambler: tx_context::sender(ctx),
+                winnings,
+                slot_1,
+                slot_2,
+                slot_3,
+                slot_4,
+                slot_5,
+                slot_6,
+            });
+
+            // delete unused id
+            object::delete(uid);
 
 
+        }
+*/
         // now let's play with luck!
-    }
+   // }
+    /*
+    public entry fun win(casino: &mut Casino, wallet: &mut Coin<SUI>, ctx: &mut TxContext){
+            
+            winnings = casino.cost_per_game * (MaxWinningsMultiplier+1); // calculate winnings + the money the user spent.
+            let payment = balance::split(&mut casino.casino_balance, winnings); // get from casino's balance.
+            balance::join(coin::balance_mut(wallet), payment); // add to user's wallet!
+            // add winnings to user's wallet
 
+             // emit event
+             event::emit( GambleEvent{
+                id: object::uid_to_inner(&uid),
+                gambler: tx_context::sender(ctx),
+                winnings,
+                slot_1,
+                slot_2,
+                slot_3,
+                slot_4,
+                slot_5,
+                slot_6,
+            });
+
+            // delete unused id
+            object::delete(uid);
+            
+    }
+*/
 
     /* A function for admins to deposit money to the casino so it can still function!  */
     public entry fun depositToCasino(_:&CasinoOwnership, casino :&mut Casino, amount: u64, payment: &mut Coin<SUI>){
@@ -169,6 +343,10 @@ module mliolios::Tombolon {
         vector::push_back(&mut vec, (*vector::borrow(&random, 0) as u8) % AmountOfCombinations);
         vector::push_back(&mut vec, (*vector::borrow(&random, 1) as u8) % AmountOfCombinations);
         vector::push_back(&mut vec, (*vector::borrow(&random, 2) as u8) % AmountOfCombinations);
+        vector::push_back(&mut vec, (*vector::borrow(&random, 3) as u8) % AmountOfCombinations);
+        vector::push_back(&mut vec, (*vector::borrow(&random, 5) as u8) % AmountOfCombinations);
+        vector::push_back(&mut vec, (*vector::borrow(&random, 5) as u8) % AmountOfCombinations);
+
 
         vec
     }
